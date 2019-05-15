@@ -1,0 +1,42 @@
+<div class="row">
+
+  <div class="col-12">
+    <h1 class="text-primary text-center d-md-none display-4 mb-3"><i class="fas fa-user-secret"></i> Comprueba tu privacidad</h1>
+    <h1 class="text-primary text-center d-none d-md-block display-3 mb-3"><i class="fas fa-user-secret"></i> Comprueba tu privacidad</h1>
+    <p><strong>¿Son tus datos realmente privados?</strong> Comprueba a cuantos de tus datos personales es posible acceder de manera pública y concienciate con esta herramienta.</p>
+  </div>
+
+  <div class="col-12 mb-3 ">
+    <form action="">
+      <div class="form-group">
+        <label for="perfil">Perfil requerido</label>
+        <input type="text" [(ngModel)]="usr" (keyup.enter)="getUsr()" name="usr" class="form-control" placeholder="https://facebook.com/tuperfil">
+      </div>
+      
+      <div class="form-group text-right">
+          <button type="button" (click)="getUsr()"  class="btn btn-outline-primary">Buscar</button>
+          <button type="button" (click)="resetUsr()"  class="btn btn-outline-danger ml-3">Limpiar</button>
+      </div>
+    </form>
+  </div>
+  
+  <div class="card-columns col-12" *ngIf="loaded">  
+  
+    <app-perfil [user]="usr"></app-perfil>  
+  
+    <app-tags [user]="usr"></app-tags>  
+
+    <app-comentarios [user]="usr"></app-comentarios>  
+  
+    <app-megusta [user]="usr"></app-megusta>  
+  
+    <app-sitios [user]="usr"></app-sitios>  
+  
+    <app-gente [user]="usr"></app-gente>  
+  
+    <app-intereses [user]="usr"></app-intereses> 
+  
+  
+  </div>
+
+</div>
