@@ -11,7 +11,7 @@ import { EventEmitter } from 'events';
 })
 export class HomeComponent implements OnInit {
 
-  public usr: any = '100003785792137';
+  public usr: any = '';
   loaded = false;
 
 
